@@ -29,7 +29,32 @@ let pessoas = [
 
 app.post('/resposta', async (req, res)=>{
     let resposta = req.body
-    res.send(resposta)
+    if(resposta.resposta==='masculino'){
+        pessoas = pessoas.filter((pessoa)=>{
+            if(pessoa.sexo==='masculino'){
+                return pessoa
+            }
+        })
+        
+    }
+    else if(resposta.resposta==='feminino'){
+        pessoas = pessoas.filter((pessoa)=>{
+            if(pessoa.sexo==='feminino'){
+                return pessoa
+            }
+        })
+    }
+    else if(resposta.resposta==='info'){
+
+    }
+    else if(resposta.resposta==='adm'){
+
+    }
+    else if(resposta.resposta==='eletro'){
+
+    }
+    
+    res.send(pessoas)
 })
 
 
