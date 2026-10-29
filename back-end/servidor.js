@@ -1,4 +1,5 @@
 import express from "express"
+import { randomUUID } from 'crypto'
 
 
 
@@ -8,6 +9,8 @@ const port = process.env.PORT || 3000
 
 
 app.use(express.json())
+
+let partidas = {}
 
 let pessoas = [
     {
@@ -27,10 +30,20 @@ let pessoas = [
     }
 ]
 
+
+app.post('/comecar', async (req, res)=>{
+    let newId = randomUUID()
+
+   partidas[newId]=[...pessoas]
+
+    res.send(newId)
+})
+
 app.post('/resposta', async (req, res)=>{
     let resposta = req.body
+    let id = resposta.id
     if(resposta.resposta==='masculino'){
-        pessoas = pessoas.filter((pessoa)=>{
+        partidas[id] = partidas[id].filter((pessoa)=>{
             if(pessoa.sexo==='masculino'){
                 return pessoa
             }
@@ -38,14 +51,14 @@ app.post('/resposta', async (req, res)=>{
         
     }
     else if(resposta.resposta==='feminino'){
-        pessoas = pessoas.filter((pessoa)=>{
+        partidas[id] = partidas[id].filter((pessoa)=>{
             if(pessoa.sexo==='feminino'){
                 return pessoa
             }
         })
     }
     else if(resposta.resposta==='info'){
-        pessoas = pessoas.filter((pessoa)=>{
+        partidas[id] = partidas[id].filter((pessoa)=>{
             if(pessoa.curso==='info'){
                 return pessoa
             }
@@ -53,27 +66,27 @@ app.post('/resposta', async (req, res)=>{
 
     }
     else if(resposta.resposta==='adm'){
-        pessoas = pessoas.filter((pessoa)=>{
-            if(pessoa.curso='adm'){
+        partidas[id] = partidas[id].filter((pessoa)=>{
+            if(pessoa.curso==='adm'){
                 return pessoa
             }
         })
 
     }
     else if(resposta.resposta==='eletro'){
-        pessoas = pessoas.filter((pessoa)=>{
+        partidas[id] = partidas[id].filter((pessoa)=>{
             if(pessoa.curso==='eletro'){
                 return pessoa
             }
         })
 
     }
-    if (pessoas.length===1){
-        console.log('pessoa encontrada!', pessoas)
+    if (partidas[id].length===1){
+        console.log('pessoa encontrada!', partidas[id])
     }
 
     
-    res.send(pessoas)
+    res.send(partidas[id])
 })
 
 
