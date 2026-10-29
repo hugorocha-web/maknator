@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macnator — Adivinhe quem é!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a class="brand" href="#">
+            <span class="brand-icon">✳</span>
+            <span>Macnator</span>
+        </a>
+
+        <p class="topbar-note">Faça perguntas. Descubra quem é!</p>
+    </header>
+
+    <main class="hero">
+        <section class="hero-content">
+            <p class="eyebrow">EDIÇÃO IFPI</p>
+
+            <h1>
+                <span class="hero-icon">✳</span>
+                Macnator
+            </h1>
+
+            <p class="description">
+                O jogo de adivinhação do IFPI.
+                <br>
+                Responda algumas perguntas e descubra qual é a pessoa!
+            </p>
+
+            <button class="start-button" id="start-button">
+                <span class="play-icon">▶</span>
+                <span id="button-label">Começar o jogo</span>
+            </button>
+
+            <p class="helper-text">
+                São apenas algumas perguntas para
+                <br>
+                encontrar a pessoa certa!
+            </p>
+
+            <p id="status-message" class="status-message"></p>
+        </section>
+
+        <section class="hero-visual">
+            <div class="visual-glow"></div>
+
+            <div class="question question-one">?</div>
+            <div class="question question-two">?</div>
+            <div class="question question-three">?</div>
+
+            <div class="floating-card card-person">♙</div>
+            <div class="floating-card card-school">⚑</div>
+            <div class="floating-card card-idea">✦</div>
+
+            <div class="mascot-placeholder">
+                <span>🧞</span>
+                <p>O gênio do Macnator</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        Macnator <span>•</span> IFPI
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
