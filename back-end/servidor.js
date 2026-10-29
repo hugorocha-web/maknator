@@ -45,14 +45,33 @@ app.post('/resposta', async (req, res)=>{
         })
     }
     else if(resposta.resposta==='info'){
+        pessoas = pessoas.filter((pessoa)=>{
+            if(pessoa.curso==='info'){
+                return pessoa
+            }
+        })
 
     }
     else if(resposta.resposta==='adm'){
+        pessoas = pessoas.filter((pessoa)=>{
+            if(pessoa.curso='adm'){
+                return pessoa
+            }
+        })
 
     }
     else if(resposta.resposta==='eletro'){
+        pessoas = pessoas.filter((pessoa)=>{
+            if(pessoa.curso==='eletro'){
+                return pessoa
+            }
+        })
 
     }
+    if (pessoas.length===1){
+        console.log('pessoa encontrada!', pessoas)
+    }
+
     
     res.send(pessoas)
 })
