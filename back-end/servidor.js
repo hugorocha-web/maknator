@@ -36,7 +36,10 @@ app.post('/comecar', async (req, res)=>{
 
    partidas[newId]=[...pessoas]
 
-    res.send(newId)
+    res.status(200).json({
+        id:newId
+    })
+    console.log(partidas)
 })
 
 app.post('/resposta', async (req, res)=>{
