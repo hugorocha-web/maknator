@@ -39,6 +39,7 @@ startButton.addEventListener("click", async () => {
             "Partida criada com sucesso!";
 
         buttonLabel.textContent = "Partida criada!";
+        
 
         console.log("ID da partida:", id);
 
