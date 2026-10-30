@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macnator | Quem é essa pessoa?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <a href="#" class="logo">Macnator<span>.</span></a>
+            <span class="header-label">IFPI • INFO 1</span>
+        </header>
+
+        <!-- Tela inicial -->
+        <section id="tela-inicial" class="tela tela-inicial">
+            <div class="icone-principal">🧠</div>
+
+            <span class="subtitulo">O jogo de adivinhação</span>
+
+            <h1>Consegue descobrir<br>em quem estou pensando?</h1>
+
+            <p>
+                Pense em alguém da turma e responda às perguntas.
+                Vou tentar descobrir quem é!
+            </p>
+
+            <button id="btn-comecar" class="btn btn-principal">
+                Começar jogo <span>→</span>
+            </button>
+
+            <span class="dica">Responda com sinceridade 👀</span>
+        </section>
+
+        <!-- Tela do jogo -->
+        <section id="tela-jogo" class="tela tela-jogo escondido">
+
+            <div class="jogo-topo">
+                <span class="tag">ADIVINHANDO...</span>
+                <span id="contador" class="contador">0 candidatos</span>
+            </div>
+
+            <div class="progresso">
+                <div id="barra-progresso"></div>
+            </div>
+
+            <div class="pergunta-card">
+                <span class="pergunta-numero">MINHA PERGUNTA</span>
+
+                <div class="pergunta-icone">🤔</div>
+
+                <h2 id="pergunta">Carregando pergunta...</h2>
+
+                <p>Essa característica combina com a pessoa que você pensou?</p>
+            </div>
+
+            <div class="respostas">
+                <button id="btn-sim" class="btn btn-resposta btn-sim">
+                    <span>✓</span> Sim
+                </button>
+
+                <button id="btn-nao" class="btn btn-resposta btn-nao">
+                    <span>✕</span> Não
+                </button>
+            </div>
+
+            <button id="btn-pular" class="btn-pular">
+                Não sei / Pular pergunta →
+            </button>
+
+            <p id="mensagem" class="mensagem"></p>
+
+        </section>
+
+        <!-- Tela de resultado -->
+        <section id="tela-resultado" class="tela tela-resultado escondido">
+
+            <span class="tag">RESULTADO FINAL</span>
+
+            <div class="resultado-icone">🎯</div>
+
+            <h1>Acho que descobri!</h1>
+
+            <p>Será que acertei quem você estava pensando?</p>
+
+            <div class="pessoa-card">
+                <img id="imagem-pessoa" src="" alt="Foto da pessoa encontrada">
+
+                <div class="pessoa-info">
+                    <span>MINHA APOSTA É</span>
+                    <h2 id="nome-pessoa"></h2>
+                </div>
+            </div>
+
+            <button id="btn-reiniciar" class="btn btn-principal">
+                Jogar novamente <span>↻</span>
+            </button>
+
+        </section>
+
+        <!-- Tela sem candidatos -->
+        <section id="tela-sem-candidatos" class="tela tela-final escondido">
+            <div class="resultado-icone">😵</div>
+
+            <h1>Me pegou!</h1>
+
+            <p>
+                Nenhuma pessoa correspondeu às suas respostas.
+                Talvez alguma resposta tenha sido diferente do esperado.
+            </p>
+
+            <button class="btn btn-principal btn-novo-jogo">
+                Tentar novamente <span>↻</span>
+            </button>
+        </section>
+
+        <!-- Tela de perguntas esgotadas -->
+        <section id="tela-esgotada" class="tela tela-final escondido">
+            <div class="resultado-icone">🤯</div>
+
+            <h1>Não consegui descobrir!</h1>
+
+            <p>
+                Minhas perguntas acabaram, mas ainda existem
+                várias possibilidades.
+            </p>
+
+            <button class="btn btn-principal btn-novo-jogo">
+                Jogar novamente <span>↻</span>
+            </button>
+        </section>
+
+        <footer>
+            <span>MACNATOR</span>
+            <span>Feito para a turma Info 1</span>
+        </footer>
+
+    </main>
+
+</body>
+</html>

@@ -1,88 +1,25 @@
 import express from "express"
-import { randomUUID } from 'crypto'
+import { randomUUID } from "crypto"
 import cors from "cors"
-import { pessoas } from './pessoas.js'
-
-
+import { pessoas } from "./pessoas.js"
+import { caracteristicas } from "./caracteristicas.js"
 
 const app = express()
 const port = process.env.PORT || 3000
-
 
 app.use(cors())
 app.use(express.json())
 
 let partidas = {}
-let caracteristicas = [
-    // Sexo
-    { campo: "sexo", valor: "masculino", pergunta: "A pessoa é homem?" },
-    { campo: "sexo", valor: "feminino", pergunta: "A pessoa é mulher?" },
-
-    // Óculos
-    { campo: "oculos", valor: true, pergunta: "A pessoa usa óculos?" },
-
-    // Cabelo
-    { campo: "cabelo", valor: "liso", pergunta: "A pessoa tem cabelo liso?" },
-    { campo: "cabelo", valor: "cacheado", pergunta: "A pessoa tem cabelo cacheado?" },
-    { campo: "cabelo", valor: "crespo", pergunta: "A pessoa tem cabelo crespo?" },
-    { campo: "cabelo", valor: "ondulado", pergunta: "A pessoa tem cabelo ondulado?" },
-
-    // Tamanho do cabelo
-    { campo: "cabelo_tamanho", valor: "curto", pergunta: "A pessoa tem cabelo curto?" },
-    { campo: "cabelo_tamanho", valor: "grande", pergunta: "A pessoa tem cabelo grande?" },
-
-    // Cabelo pintado
-    { campo: "cabelo_pintado", valor: true, pergunta: "A pessoa pinta o cabelo?" },
-
-    // Aparelho
-    { campo: "aparelho", valor: true, pergunta: "A pessoa usa aparelho?" },
-
-    // Altura
-    { campo: "altura", valor: "baixo", pergunta: "A pessoa é baixa?" },
-    { campo: "altura", valor: "medio", pergunta: "A pessoa tem altura média?" },
-    { campo: "altura", valor: "acima_media", pergunta: "A pessoa é um pouco mais alta que a média?" },
-    { campo: "altura", valor: "alto", pergunta: "A pessoa é alta?" },
-
-    // Barba e bigode
-    { campo: "barba_bigode", valor: true, pergunta: "A pessoa tem barba ou bigode?" },
-
-    // Esportes
-    { campo: "esportes", valor: "futebol", pergunta: "A pessoa pratica futebol?" },
-    { campo: "esportes", valor: "futsal", pergunta: "A pessoa pratica futsal?" },
-    { campo: "esportes", valor: "vôlei", pergunta: "A pessoa pratica vôlei?" },
-    { campo: "esportes", valor: "karatê", pergunta: "A pessoa pratica karatê?" },
-    { campo: "esportes", valor: "muay thai", pergunta: "A pessoa pratica muay thai?" },
-    { campo: "esportes", valor: "beach tennis", pergunta: "A pessoa pratica beach tennis?" },
-    { campo: "esportes", valor: "musculação", pergunta: "A pessoa pratica musculação?" },
-
-    // Videogame
-    { campo: "videogame", valor: true, pergunta: "A pessoa joga videogame?" },
-
-    // Participação
-    { campo: "participa_atividades", valor: "sim", pergunta: "A pessoa participa das atividades da turma?" },
-    { campo: "participa_atividades", valor: "pouco", pergunta: "A pessoa participa pouco das atividades?" },
-
-    // Mochila e bolsa
-    { campo: "mochila", valor: true, pergunta: "A pessoa usa mochila?" },
-    { campo: "bolsa", valor: true, pergunta: "A pessoa usa bolsa?" },
-
-    // Chegada
-    { campo: "chegada", valor: "cedo", pergunta: "A pessoa costuma chegar cedo?" },
-    { campo: "chegada", valor: "horario", pergunta: "A pessoa costuma chegar no horário?" },
-    { campo: "chegada", valor: "nao_cedo", pergunta: "A pessoa costuma chegar atrasada ou não tão cedo?" },
-
-    // Moletom
-    { campo: "usa_moletom", valor: true, pergunta: "A pessoa costuma usar moletom?" },
-
-    // Cargo
-]
 
 
-function avaliarCaracteristicas(pessoas, caracteristica){
+
+
+function avaliarCaracteristicas(candidatos, caracteristica) {
     let sim = 0
     let nao = 0
 
-    pessoas.forEach(pessoa => {
+    candidatos.forEach(pessoa => {
         let valorPessoa = pessoa[caracteristica.campo]
 
         if (valorPessoa === null || valorPessoa === undefined) {
@@ -112,113 +49,165 @@ function avaliarCaracteristicas(pessoas, caracteristica){
         nao,
         diferenca
     }
-
 }
-function escolherPergunta(candidatos, perguntasFeitas){
+
+
+function escolherPergunta(candidatos, perguntasFeitas) {
     let disponiveis = caracteristicas.filter(caracteristica => {
         let jaFoiFeita = perguntasFeitas.some(pergunta => {
             return pergunta.campo === caracteristica.campo &&
                 pergunta.valor === caracteristica.valor
-            })
+        })
 
-            return !jaFoiFeita
+        return !jaFoiFeita
     })
 
     let list = []
-    for(let i = 0; i < disponiveis.length; i++){
-        let caracteristica = avaliarCaracteristicas(candidatos, disponiveis[i])
-        list.push(caracteristica)
+
+    for (let i = 0; i < disponiveis.length; i++) {
+        let resultado = avaliarCaracteristicas(candidatos, disponiveis[i])
+
+        // Não escolhe perguntas sobre características desconhecidas por todos.
+        if (resultado.sim + resultado.nao > 0) {
+            list.push(resultado)
+        }
     }
+
     let menor = Infinity
-    let pergunta;
-    
-    for(let i = 0; i < list.length; i++){
-        console.log(list[i])
-        
-        if(list[i].diferenca < menor){
-            menor=list[i].diferenca
+    let pergunta
+
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].diferenca < menor) {
+            menor = list[i].diferenca
             pergunta = list[i].caracteristica
         }
     }
-    
+
     return pergunta
-    
 }
 
 
-
-
-app.post('/comecar', async (req, res)=>{
+// Inicia uma partida
+app.post("/comecar", (req, res) => {
     let newId = randomUUID()
 
+    let candidatos = [...pessoas]
+    let perguntaAtual = escolherPergunta(candidatos, [])
+
     partidas[newId] = {
-        candidatos: [...pessoas],
-        perguntaAtual: escolherPergunta([...pessoas], []),
-        perguntasFeitas: []
+        candidatos,
+        perguntaAtual,
+        perguntasFeitas: [],
+        status: perguntaAtual ? "em_andamento" : "perguntas_esgotadas",
+        pessoaEncontrada: null
     }
-        
 
     res.status(200).json({
         id: newId,
-        pergunta: partidas[newId].perguntaAtual.pergunta
+        pergunta: perguntaAtual ? perguntaAtual.pergunta : null,
+        candidatos: candidatos.length,
+        status: partidas[newId].status
     })
-    console.log(partidas)
 })
 
 
-app.post('/resposta', async (req, res) => {
-    let resposta = req.body
-    let id = resposta.id
-    if(resposta.resposta !=='pular'){
-        
-        let pergunta = partidas[id].perguntaAtual
-        console.log(pergunta)
+// Recebe a resposta do jogador
+app.post("/resposta", (req, res) => {
+    let { id, resposta } = req.body
+
+    let partida = partidas[id]
+
+    if (!partida) {
+        return res.status(404).json({
+            erro: "Partida não encontrada."
+        })
+    }
+
+    if (partida.status !== "em_andamento") {
+        return res.status(400).json({
+            erro: "Essa partida já foi encerrada."
+        })
+    }
+
+    if (!["sim", "não", "pular"].includes(resposta)) {
+        return res.status(400).json({
+            erro: "Resposta inválida."
+        })
+    }
+
+    let pergunta = partida.perguntaAtual
+
+    if (!pergunta) {
+        return res.status(400).json({
+            erro: "Não existe uma pergunta atual."
+        })
+    }
+
+    // Filtra os candidatos quando a resposta não é pular.
+    if (resposta !== "pular") {
         let campo = pergunta.campo
         let valor = pergunta.valor
-        
 
-        let corresponde
-        partidas[id].candidatos = partidas[id].candidatos.filter(pessoa => {
-            if (pessoa[campo] === null || pessoa[campo] === undefined) {
+        partida.candidatos = partida.candidatos.filter(pessoa => {
+            let valorPessoa = pessoa[campo]
+
+            // Mantém candidatos com informação desconhecida.
+            if (valorPessoa === null || valorPessoa === undefined) {
                 return true
             }
-            if (Array.isArray(pessoa[campo])) {
-                corresponde = pessoa[campo].includes(valor)
+
+            let corresponde
+
+            if (Array.isArray(valorPessoa)) {
+                corresponde = valorPessoa.includes(valor)
+            } else {
+                corresponde = valorPessoa === valor
             }
-            else{
-                corresponde = pessoa[campo] === valor
-            }
-            if(resposta.resposta === 'sim'){
+
+            if (resposta === "sim") {
                 return corresponde
             }
-            else if(resposta.resposta === 'não'){
-                return !corresponde
-            }
 
+            return !corresponde
         })
-        
-    }
-    
-    
-    
-    
-
-    if (partidas[id].candidatos.length === 1) {
-        console.log('pessoa encontrada!', partidas[id])
-    }
-    else{
-        partidas[id].perguntasFeitas.push(partidas[id].perguntaAtual)
-        partidas[id].perguntaAtual = escolherPergunta(partidas[id].candidatos, partidas[id].perguntasFeitas)
     }
 
-    res.json({
+    // Marca a pergunta atual como já utilizada.
+    partida.perguntasFeitas.push(pergunta)
 
+    // Verifica se não sobrou nenhum candidato.
+    if (partida.candidatos.length === 0) {
+        partida.status = "sem_candidatos"
+        partida.perguntaAtual = null
+    }
+
+    // Verifica se encontrou uma única pessoa.
+    else if (partida.candidatos.length === 1) {
+        partida.status = "encontrada"
+        partida.pessoaEncontrada = partida.candidatos[0]
+        partida.perguntaAtual = null
+    }
+
+    // Se ainda existem vários candidatos, escolhe outra pergunta.
+    else {
+        partida.perguntaAtual = escolherPergunta(
+            partida.candidatos,
+            partida.perguntasFeitas
+        )
+
+        // Verifica se acabaram as perguntas disponíveis.
+        if (!partida.perguntaAtual) {
+            partida.status = "perguntas_esgotadas"
+        }
+    }
+
+    // Retorna as partidas para o frontend.
+    res.status(200).json({
         partidas
-
     })
 })
 
 
 app.listen(port, () => {
-    console.log('rodando na porta', port)
+    console.log("rodando na porta", port)
 })
