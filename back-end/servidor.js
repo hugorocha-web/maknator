@@ -114,18 +114,24 @@ function avaliarCaracteristicas(pessoas, caracteristica){
     }
 
 }
-function escolherPergunta(candidatos){
+function escolherPergunta(candidatos, perguntasFeitas){
+    let disponiveis = caracteristicas.filter(caracteristica => {
+        let jaFoiFeita = perguntasFeitas.some(pergunta => {
+            return pergunta.campo === caracteristica.campo &&
+                pergunta.valor === caracteristica.valor
+            })
+
+            return !jaFoiFeita
+    })
 
     let list = []
-    for(let i = 0; i < caracteristicas.length; i++){ 
-
-        
-        let caracteristica = avaliarCaracteristicas(candidatos, caracteristicas[i])
+    for(let i = 0; i < disponiveis.length; i++){
+        let caracteristica = avaliarCaracteristicas(candidatos, disponiveis[i])
         list.push(caracteristica)
-
     }
-    let menor = 100
+    let menor = Infinity
     let pergunta;
+    
     for(let i = 0; i < list.length; i++){
         console.log(list[i])
         
@@ -140,14 +146,15 @@ function escolherPergunta(candidatos){
 }
 
 
-console.log(escolherPergunta(pessoas))
+
 
 app.post('/comecar', async (req, res)=>{
     let newId = randomUUID()
 
     partidas[newId] = {
         candidatos: [...pessoas],
-        perguntaAtual: escolherPergunta([...pessoas])
+        perguntaAtual: escolherPergunta([...pessoas], []),
+        perguntasFeitas: []
     }
         
 
@@ -162,31 +169,37 @@ app.post('/comecar', async (req, res)=>{
 app.post('/resposta', async (req, res) => {
     let resposta = req.body
     let id = resposta.id
-    let pergunta = partidas[id].perguntaAtual
-    console.log(pergunta)
-    let campo = pergunta.campo
-    let valor = pergunta.valor
+    if(resposta.resposta !=='pular'){
+        
+        let pergunta = partidas[id].perguntaAtual
+        console.log(pergunta)
+        let campo = pergunta.campo
+        let valor = pergunta.valor
+        
+
+        let corresponde
+        partidas[id].candidatos = partidas[id].candidatos.filter(pessoa => {
+            if (pessoa[campo] === null || pessoa[campo] === undefined) {
+                return true
+            }
+            if (Array.isArray(pessoa[campo])) {
+                corresponde = pessoa[campo].includes(valor)
+            }
+            else{
+                corresponde = pessoa[campo] === valor
+            }
+            if(resposta.resposta === 'sim'){
+                return corresponde
+            }
+            else if(resposta.resposta === 'não'){
+                return !corresponde
+            }
+
+        })
+        
+    }
     
-
-    let corresponde
-    partidas[id].candidatos = partidas[id].candidatos.filter(pessoa => {
-        if (pessoa[campo] === null || pessoa[campo] === undefined) {
-            return
-        }
-        if (Array.isArray(pessoa[campo])) {
-            corresponde = pessoa.includes(pessoa[campo])
-        }
-        else{
-            corresponde = pessoa[campo] === valor
-        }
-        if(resposta.resposta === 'sim'){
-            return corresponde
-        }
-        else if(resposta.resposta === 'não'){
-            return !corresponde
-        }
-
-    })
+    
     
     
 
@@ -194,7 +207,8 @@ app.post('/resposta', async (req, res) => {
         console.log('pessoa encontrada!', partidas[id])
     }
     else{
-        partidas[id].perguntaAtual = escolherPergunta(partidas[id].candidatos)
+        partidas[id].perguntasFeitas.push(partidas[id].perguntaAtual)
+        partidas[id].perguntaAtual = escolherPergunta(partidas[id].candidatos, partidas[id].perguntasFeitas)
     }
 
     res.json({
