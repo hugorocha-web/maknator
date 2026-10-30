@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:3000"
+const API_URL = "https://maknator.onrender.com"
 
 const telaInicial = document.querySelector("#tela-inicial")
 const telaJogo = document.querySelector("#tela-jogo")
