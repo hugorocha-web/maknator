@@ -1,6 +1,7 @@
 export const pessoas = [
     {
-        nome: "Anny",
+        nome: "ANY CLICIA DE OLIVEIRA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177207.43PrEMd31wbj.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
@@ -18,7 +19,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Bárbara Raone",
+        nome: "BARBARA RAWANNY MENEZES PEREIRA",
+        img:"https://suap.ifpi.edu.br/media/alunos/180110.l2H59-3dLfsG.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
@@ -36,7 +38,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Daniel dos Santos",
+        nome: "DANIEL DOS SANTOS LUZ",
+        img:"https://suap.ifpi.edu.br/media/alunos/177315.vWCnVyz72oEk.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "cacheado",
@@ -54,7 +57,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Daniel Expedito",
+        nome: "DANIEL EXPEDITO ALENCAR ARRAIS DE CARVALHO",
+        img:"https://suap.ifpi.edu.br/media/alunos/177131.tJgFcrQMCHKO.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "liso",
@@ -72,7 +76,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "David",
+        nome: "DAVID IVIRSON FEITOSA SOUSA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177322.D1iBhT1QHmsK.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "liso",
@@ -90,7 +95,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Emanuelle",
+        nome: "EMANUELLY SILVA SANTOS",
+        img:"https://suap.ifpi.edu.br/media/alunos/177344.TK3f6-xCpxN7.jpg",
         sexo: "feminino",
         oculos: true,
         cabelo: "cacheado",
@@ -108,7 +114,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Emily",
+        nome: "EMYLLE BEATRIZ SILVA SANTANA",
+        img:"https://suap.ifpi.edu.br/media/alunos/180122._7jxGwK7zkWB.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "liso",
@@ -126,7 +133,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Eric",
+        nome: "ERICK CARVALHO FREITAS",
+        img:"https://suap.ifpi.edu.br/media/alunos/177738.ZFYXHSGrfRt8.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "liso",
@@ -144,7 +152,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Emília",
+        nome: "ESTER EMÍLIA RODRIGUES DE ARAÚJO LUZ",
+        img:"https://suap.ifpi.edu.br/media/alunos/177136.P1Um4-WEI43w.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "liso",
@@ -162,7 +171,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Evelyn",
+        nome: "EVELYN LEAL DE MOURA SILVA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177356.Mu69Is5aJ1nR.jpg",
         sexo: "feminino",
         oculos: true,
         cabelo: "liso",
@@ -180,7 +190,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Fabiana Stella",
+        nome: "FABIANA ISTELA BRITO DE SOUSA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177143.Nx7zgDL5NVNy.jpg",
         sexo: "feminino",
         oculos: true,
         cabelo: "liso",
@@ -198,7 +209,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Gabriel",
+        nome: "GABRIEL SOUSA VERA XAVIER",
+        img:"https://suap.ifpi.edu.br/media/alunos/177178.sn6UyeCo5EB7.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "liso",
@@ -216,7 +228,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Genova",
+        nome: "GHENOVA LEAL DE SÁ",
+        img:"https://suap.ifpi.edu.br/media/alunos/177329.5LMSqKDWbkzl.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
@@ -234,7 +247,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Gil Alisson",
+        nome: "GILIALLISON LIMA MARTINS DE SOUSA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177302.LXtJn_oyPQDI.jpg",
         sexo: "masculino",
         oculos: true,
         cabelo: null,
@@ -252,7 +266,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Henrique",
+        nome: "HENRIQUE FLÁVIO LACERDA SILVA",
+        img:"https://suap.ifpi.edu.br/media/alunos/179911.jAxj3wezfB3o.jpg",
         sexo: "masculino",
         oculos: true,
         cabelo: "cacheado",
@@ -270,7 +285,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Hugo",
+        nome: "HUGO DE SOUZA ROCHA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177256.wp9gqlAMUXdB.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "crespo",
@@ -288,7 +304,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Ian",
+        nome: "IAN CARLOS ALMEIDA ROCHA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177234.N3uZG3aRJts9.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "cacheado",
@@ -306,25 +323,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Isabelly",
-        sexo: "feminino",
-        oculos: false,
-        cabelo: "liso",
-        cabelo_tamanho: null,
-        cabelo_pintado: false,
-        aparelho: false,
-        altura: "alto",
-        barba_bigode: false,
-        esportes: [],
-        videogame: false,
-        participa_atividades: null,
-        mochila: true,
-        bolsa: false,
-        chegada: null,
-        usa_moletom: false
-    },
-    {
-        nome: "Júlio César",
+        nome: "JULIO CESAR LIMA VELOSO",
+        img:"https://suap.ifpi.edu.br/media/alunos/177166.3c5nCZE486eL.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "liso",
@@ -342,7 +342,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Laura",
+        nome: "LAURA BEATRIZ DE SOUSA PARAIBA ROCHA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177379.bQly6fVbpMxV.jpg",
         sexo: "feminino",
         oculos: true,
         cabelo: "liso",
@@ -360,7 +361,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Lázaro",
+        nome: "LAZARO HENRIQUE LUZ ZACARIAS DE SOUSA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177374.8vs_FP05_tmP.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "cacheado",
@@ -378,7 +380,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Letícia",
+        nome: "LETICIA DE MOURA SOUSA",
+        img:"https://suap.ifpi.edu.br/media/alunos/176843.3mCdcEMnkeAi.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "ondulado",
@@ -396,7 +399,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Ludimila",
+        nome: "LUDYMILLA SANTANA SILVA",
+        img:"https://suap.ifpi.edu.br/media/alunos/179934.cmmmmLX4BySi.jpg",
         sexo: "feminino",
         oculos: true,
         cabelo: "cacheado",
@@ -414,7 +418,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Marcilio",
+        nome: "MARCOS FELIPE SOUSA BATISTA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177364.4bypgrTMiERg.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "cacheado",
@@ -432,7 +437,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Marcos Juan",
+        nome: "MARCOS RUAN ALVES PEREIRA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177149.L6wv3i06-INK.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "liso",
@@ -450,7 +456,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Margilaine",
+        nome: "MARDILA CLAUDETE DA SILVA LIMA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177245.PfTjR-Dq1gDX.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
@@ -468,7 +475,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Maria Fernanda",
+        nome: "Maria Fernanda Lima Batista Rodrigues",
+        img:"https://suap.ifpi.edu.br/media/alunos/180117.ruruw304MGiu.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
@@ -486,7 +494,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Maria Nara",
+        nome: "Maria Fernanda Lima Batista Rodrigues",
+        img:"https://suap.ifpi.edu.br/media/alunos/181089.zZt7cnY1dr-7.jpg",
         sexo: "feminino",
         oculos: true,
         cabelo: "crespo",
@@ -504,7 +513,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Marina",
+        nome: "MARINA SANTOS DA COSTA",
+        img:"https://suap.ifpi.edu.br/media/alunos/179988.pSd2IX4jy6Wr.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "liso",
@@ -522,7 +532,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Matheus",
+        nome: "MATEUS HENRIQUE BATISTA MIRANDA",
+        img:"https://suap.ifpi.edu.br/media/alunos/179984.8MiyVTRKUo0d.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "liso",
@@ -540,7 +551,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Natyellen",
+        nome: "NATYELEN DE SOUSA MOURA",
+        img:"https://suap.ifpi.edu.br/media/alunos/180105.Q0TJ-ZgWzjTj.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
@@ -558,7 +570,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Nicole",
+        nome: "NICOLY LORRANY LEONIDAS VASCO",
+        img:"https://suap.ifpi.edu.br/media/alunos/177278.2p11yxh-IsPu.jpg",
         sexo: "feminino",
         oculos: true,
         cabelo: "cacheado",
@@ -576,7 +589,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Paulo Gabriel",
+        nome: "PAULO GABRIEL PEREIRA DE MOURA FE",
+        img:"https://suap.ifpi.edu.br/media/alunos/177189.9KCirIk2Z1Zj.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "liso",
@@ -594,7 +608,8 @@ export const pessoas = [
         usa_moletom: true
     },
     {
-        nome: "Paulo Henrique",
+        nome: "PAULO HENRIQUE DA SILVA RODRIGUES GONCALVES",
+        img:"https://suap.ifpi.edu.br/media/alunos/177140.iwFzN1PGreKO.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "cacheado",
@@ -612,7 +627,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Pedro Lucas",
+        nome: "PEDRO LUCAS DA SILVA CARVALHO",
+        img:"https://suap.ifpi.edu.br/media/alunos/177239.HEcM8uR5cJrl.jpg",
         sexo: "masculino",
         oculos: true,
         cabelo: "liso",
@@ -630,7 +646,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Rebeca",
+        nome: "REBECA DA SILVA NOGUEIRA",
+        img:"https://suap.ifpi.edu.br/media/alunos/180941.QtmwfY265dlq.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
@@ -648,7 +665,8 @@ export const pessoas = [
         usa_moletom: true
     },
     {
-        nome: "Renato",
+        nome: "RENATO RIAN SOARES GONCALVES",
+        img:"https://suap.ifpi.edu.br/media/alunos/177756.PiDxtW6HYsFN.jpg",
         sexo: "masculino",
         oculos: false,
         cabelo: "crespo",
@@ -666,7 +684,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Samara",
+        nome: "SAMARA SANTOS SOUSA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177157.RnZSGy_7QZyP.jpg",
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
@@ -684,7 +703,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Tamires",
+        nome: "THAMYRES RAYELLE BRITO FERREIRA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177325.cSPtbpxw5rG5.jpg",
         sexo: "feminino",
         oculos: true,
         cabelo: "cacheado",
@@ -702,7 +722,8 @@ export const pessoas = [
         usa_moletom: false
     },
     {
-        nome: "Wallace",
+        nome: "WALLACE NICOLAS LUZ LACERDA",
+        img:"https://suap.ifpi.edu.br/media/alunos/177223.f54IJEmctIBg.jpg",
         sexo: "masculino",
         oculos: true,
         cabelo: "liso",
