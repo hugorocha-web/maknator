@@ -160,6 +160,8 @@ app.post("/resposta", (req, res) => {
 
             if (Array.isArray(valorPessoa)) {
                 corresponde = valorPessoa.includes(valor)
+            } else if (campo === "altura" && valor === "alto") {
+                corresponde = valorPessoa === "alto" || valorPessoa === "acima_media"
             } else {
                 corresponde = valorPessoa === valor
             }

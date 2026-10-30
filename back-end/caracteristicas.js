@@ -1,61 +1,74 @@
+
 export const caracteristicas = [
-    // Sexo
-    { campo: "sexo", valor: "masculino", pergunta: "A pessoa é homem?" },
-    { campo: "sexo", valor: "feminino", pergunta: "A pessoa é mulher?" },
+    // Características antigas
+    { campo: "sexo", valor: "masculino", pergunta: "É do sexo masculino?" },
+    { campo: "sexo", valor: "feminino", pergunta: "É do sexo feminino?" },
 
-    // Óculos
-    { campo: "oculos", valor: true, pergunta: "A pessoa usa óculos?" },
+    { campo: "oculos", valor: true, pergunta: "Usa óculos?" },
 
-    // Cabelo
-    { campo: "cabelo", valor: "liso", pergunta: "A pessoa tem cabelo liso?" },
-    { campo: "cabelo", valor: "cacheado", pergunta: "A pessoa tem cabelo cacheado?" },
-    { campo: "cabelo", valor: "crespo", pergunta: "A pessoa tem cabelo crespo?" },
-    { campo: "cabelo", valor: "ondulado", pergunta: "A pessoa tem cabelo ondulado?" },
+    { campo: "cabelo", valor: "liso", pergunta: "Tem cabelo liso?" },
+    { campo: "cabelo", valor: "cacheado", pergunta: "Tem cabelo cacheado?" },
+    { campo: "cabelo", valor: "crespo", pergunta: "Tem cabelo crespo?" },
+    { campo: "cabelo", valor: "ondulado", pergunta: "Tem cabelo ondulado?" },
 
-    // Tamanho do cabelo
-    { campo: "cabelo_tamanho", valor: "curto", pergunta: "A pessoa tem cabelo curto?" },
-    { campo: "cabelo_tamanho", valor: "grande", pergunta: "A pessoa tem cabelo grande?" },
+    { campo: "cabelo_tamanho", valor: "curto", pergunta: "Tem cabelo curto?" },
+    { campo: "cabelo_tamanho", valor: "grande", pergunta: "Tem cabelo grande?" },
 
-    // Cabelo pintado
-    { campo: "cabelo_pintado", valor: true, pergunta: "A pessoa pinta o cabelo?" },
+    { campo: "cabelo_pintado", valor: true, pergunta: "Tem cabelo pintado?" },
+    { campo: "aparelho", valor: true, pergunta: "Usa aparelho nos dentes?" },
 
-    // Aparelho
-    { campo: "aparelho", valor: true, pergunta: "A pessoa usa aparelho?" },
+    { campo: "altura", valor: "baixo", pergunta: "É baixo?" },
+    { campo: "altura", valor: "acima_media", pergunta: "É um pouco acima da média de altura?" },
+    { campo: "altura", valor: "alto", pergunta: "É alto?" },
 
-    // Altura
-    { campo: "altura", valor: "baixo", pergunta: "A pessoa é baixa?" },
-    { campo: "altura", valor: "medio", pergunta: "A pessoa tem altura média?" },
-    { campo: "altura", valor: "acima_media", pergunta: "A pessoa é um pouco mais alta que a média?" },
-    { campo: "altura", valor: "alto", pergunta: "A pessoa é alta?" },
+    { campo: "barba_bigode", valor: true, pergunta: "Tem barba ou bigode?" },
 
-    // Barba e bigode
-    { campo: "barba_bigode", valor: true, pergunta: "A pessoa tem barba ou bigode?" },
+    { campo: "esportes", valor: "volei", pergunta: "Pratica vôlei?" },
+    { campo: "esportes", valor: "karate", pergunta: "Pratica karatê?" },
+    { campo: "esportes", valor: "futsal", pergunta: "Pratica futsal?" },
+    { campo: "esportes", valor: "futebol", pergunta: "Pratica futebol?" },
+    { campo: "esportes", valor: "muay_thai", pergunta: "Pratica muay thai?" },
+    { campo: "esportes", valor: "beach_tennis", pergunta: "Pratica beach tennis?" },
 
-    // Esportes
-    { campo: "esportes", valor: "futebol", pergunta: "A pessoa pratica futebol?" },
-    { campo: "esportes", valor: "futsal", pergunta: "A pessoa pratica futsal?" },
-    { campo: "esportes", valor: "volei", pergunta: "A pessoa pratica vôlei?" },
-    { campo: "esportes", valor: "karate", pergunta: "A pessoa pratica karatê?" },
-    { campo: "esportes", valor: "muay_thai", pergunta: "A pessoa pratica muay thai?" },
-    { campo: "esportes", valor: "beach_tennis", pergunta: "A pessoa pratica beach tennis?" },
-    { campo: "esportes", valor: "musculacao", pergunta: "A pessoa pratica musculação?" },
+    { campo: "videogame", valor: true, pergunta: "Joga videogame?" },
+    { campo: "videogame", valor: false, pergunta: "Não joga videogame?" },
 
-    // Videogame
-    { campo: "videogame", valor: true, pergunta: "A pessoa joga videogame?" },
+    { campo: "participa_atividades", valor: "sim", pergunta: "Participa das atividades da turma?" },
+    { campo: "participa_atividades", valor: "pouco", pergunta: "Participa pouco das atividades da turma?" },
+    { campo: "participa_atividades", valor: "nao", pergunta: "Não participa das atividades da turma?" },
 
-    // Participação
-    { campo: "participa_atividades", valor: "sim", pergunta: "A pessoa participa das atividades da turma?" },
-    { campo: "participa_atividades", valor: "pouco", pergunta: "A pessoa participa pouco das atividades?" },
+    { campo: "mochila", valor: true, pergunta: "Usa mochila?" },
+    { campo: "bolsa", valor: true, pergunta: "Usa bolsa?" },
+    { campo: "chegada", valor: "cedo", pergunta: "Costuma chegar cedo?" },
+    { campo: "chegada", valor: "horario", pergunta: "Costuma chegar no horário?" },
+    { campo: "chegada", valor: "nao_cedo", pergunta: "Costuma chegar atrasado ou não tão cedo?" },
+    { campo: "usa_moletom", valor: true, pergunta: "Costuma usar moletom?" },
 
-    // Mochila e bolsa
-    { campo: "mochila", valor: true, pergunta: "A pessoa usa mochila?" },
-    { campo: "bolsa", valor: true, pergunta: "A pessoa usa bolsa?" },
+    // Novas características
+    { campo: "curso", valor: "informatica", pergunta: "É do curso de Informática?" },
+    { campo: "curso", valor: "administracao", pergunta: "É do curso de Administração?" },
+    { campo: "curso", valor: "eletrotecnica", pergunta: "É do curso de Eletrotécnica?" },
 
-    // Chegada
-    { campo: "chegada", valor: "cedo", pergunta: "A pessoa costuma chegar cedo?" },
-    { campo: "chegada", valor: "horario", pergunta: "A pessoa costuma chegar no horário?" },
-    { campo: "chegada", valor: "nao_cedo", pergunta: "A pessoa costuma chegar atrasada ou não tão cedo?" },
+    { campo: "usa_fones", valor: true, pergunta: "Costuma usar fones de ouvido na escola?" },
+    { campo: "usa_colar", valor: true, pergunta: "Costuma usar colar?" },
+    { campo: "cabelo_raspado_laterais", valor: true, pergunta: "Tem as laterais do cabelo raspadas?" },
+    { campo: "pinta_unhas", valor: true, pergunta: "Costuma pintar as unhas?" },
+    { campo: "participa_eventos", valor: true, pergunta: "Participa de eventos ou apresentações da escola?" },
+    { campo: "faz_academia", valor: true, pergunta: "Faz academia ou musculação?" },
 
-    // Moletom
-    { campo: "usa_moletom", valor: true, pergunta: "A pessoa costuma usar moletom?" }
-]
+    { campo: "tem_tatuagem", valor: true, pergunta: "Tem tatuagem visível?" },
+    { campo: "tem_piercing", valor: true, pergunta: "Usa piercing?" },
+    { campo: "tem_franja", valor: true, pergunta: "Tem franja?" },
+    { campo: "usa_brincos", valor: true, pergunta: "Costuma usar brincos?" },
+    { campo: "tem_covinhas", valor: true, pergunta: "Tem covinhas no rosto?" },
+    { campo: "tem_sardas", valor: true, pergunta: "Tem sardas?" },
+    { campo: "usa_relogio", valor: true, pergunta: "Costuma usar relógio?" },
+    { campo: "usa_bone", valor: true, pergunta: "Costuma usar boné?" },
+
+    { campo: "usa_camisa_time", valor: true, pergunta: "Costuma usar camisa de time?" },
+    { campo: "usa_oculos_sol", valor: true, pergunta: "Usa óculos de sol?" },
+    { campo: "tem_corte_degrade", valor: true, pergunta: "Tem corte degradê?" },
+    { campo: "usa_calca_larga", valor: true, pergunta: "Costuma usar calça larga?" },
+    { campo: "usa_tenis_marcante", valor: true, pergunta: "Usa tênis de cor marcante?" },
+    { campo: "usa_acessorio_frequente", valor: true, pergunta: "Usa algum acessório quase todos os dias?" }
+];
