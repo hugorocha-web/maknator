@@ -763,18 +763,18 @@ export const pessoas = [
         usa_relogio: false,
         usa_bone: false,
         curso: "Informática",
-        usa_fones: null,
-        usa_colar: null,
+        usa_fones: false,
+        usa_colar: true,
         cabelo_raspado_laterais: false,
-        pinta_unhas: null,
-        participa_eventos: false,
-        faz_academia: null,
+        pinta_unhas: true,
+        participa_eventos: true,
+        faz_academia: false,
         usa_camisa_time: false,
         usa_oculos_sol: false,
         tem_corte_degrade: false,
-        usa_calca_larga: null,
+        usa_calca_larga: true,
         usa_tenis_cor_marcante: false,
-        usa_acessorio_diario: null
+        usa_acessorio_diario: true
 
     },
     {
