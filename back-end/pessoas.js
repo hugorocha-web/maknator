@@ -742,7 +742,7 @@ export const pessoas = [
         sexo: "feminino",
         oculos: false,
         cabelo: "cacheado",
-        cabelo_tamanho: grande,
+        cabelo_tamanho: "grande",
         cabelo_pintado: false,
         aparelho: false,
         altura: "baixo",
